@@ -52,7 +52,7 @@ export default function Footer() {
                 Christopher Gore
               </h3>
               <p className="text-muted-foreground text-sm mb-4">
-                Senior Full Stack Developer specializing in <strong>Angular, .NET Core, C#, Python, and Django</strong>. 
+                Senior Full Stack Developer specializing in <strong>Angular, React, .NET Core, C#, Python, and Django</strong>. 
                 Building secure, high-performance web applications with 10+ years of experience.
               </p>
               
@@ -117,7 +117,7 @@ export default function Footer() {
                 <p>📧 christophergore921@gmail.com</p>
                 <p>📍 Chicago, IL</p>
                 <p className="mt-4">
-                  Open to senior full-stack roles and technical leadership opportunities.
+                  Open to senior full-stack roles, technical leadership, and cloud architecture opportunities.
                 </p>
               </div>
             </motion.div>

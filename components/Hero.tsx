@@ -19,14 +19,14 @@ export default function Hero() {
   };
 
   const handleDownloadResume = () => {
-    // Direct link to your resume (replace with actual PDF URL if hosted elsewhere)
-    window.open("https://drive.google.com/file/d/1AprBGhW4X_k0kTLgXXnmDO5CYGXrvdux/view?usp=sharing", '_blank');
+    // Cleaned URL (no trailing spaces)
+    window.open("https://drive.google.com/file/d/1GsMt57wHqWjedcV19sbZrgmyAM-uiDjp/view?usp=drive_link", '_blank');
   };
 
   const handleSocialClick = (platform: string) => {
     const links = {
       github: "https://github.com/prodev357",
-      email: "mailto:christophergore921@gmail.com"
+      email: "mailto:ryanshield132456@gmail.com"
     };
     
     if (links[platform as keyof typeof links]) {
@@ -76,7 +76,7 @@ export default function Hero() {
             >
               Hi, I'm{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">
-                Christopher Gore
+                Ryan Shields
               </span>
             </motion.h1>
             
@@ -93,7 +93,7 @@ export default function Hero() {
                 transition={{ delay: 0.6, duration: 2 }}
                 className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-primary"
               >
-                Senior Full Stack Developer | Python • Django • C# • .NET & Angular • React Expert
+                AI Automation Architect | CRM/ERP Integration Specialist
               </motion.span>
             </motion.div>
 
@@ -103,7 +103,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
             >
-              Senior Full Stack Engineer with 10+ years of experience building secure, high-performance web applications using Python • Django • C# • .NET & Angular • React. Delivered solutions for 200K+ users with 99.9% uptime** and 40–60% performance improvements.
+              AI Automation Architect with over 20 years of experience designing and delivering production-grade systems that connect CRM (Dynamics 365, Salesforce), ERP (SAP, NetSuite), and custom applications using LLMs, RAG, and cloud technologies.
             </motion.p>
 
             <motion.div
@@ -159,7 +159,33 @@ export default function Hero() {
           </motion.div>
 
           {/* Avatar */}
-        
+          <motion.div
+            className="flex-shrink-0"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            <div className="relative">
+              <motion.div
+                className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <Image
+                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=600&h=600&fit=crop"
+                  alt="Ryan Shields - AI Automation Architect"
+                  fill
+                  sizes="(max-width: 768px) 320px, 384px"
+                  className="object-cover"
+                  data-testid="img-avatar"
+                  priority
+                />
+              </motion.div>
+              
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 blur-xl -z-10" />
+            </div>
+          </motion.div>
         </div>
 
         {/* Scroll indicator */}

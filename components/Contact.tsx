@@ -50,12 +50,12 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // Open user's default email client with pre-filled message
       const subject = encodeURIComponent(data.subject);
       const body = encodeURIComponent(
         `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
       );
-      const emailUrl = `mailto:christophergore921@gmail.com?subject=${subject}&body=${body}`;
+      // ✅ Correct email from Ryan's resume
+      const emailUrl = `mailto:ryanshield132456@gmail.com?subject=${subject}&body=${body}`;
       
       window.open(emailUrl, '_blank');
       
@@ -69,7 +69,7 @@ export default function Contact() {
     } catch (error) {
       toast({
         title: "Unable to open email client",
-        description: "Please contact me directly at christophergore921@gmail.com",
+        description: "Please contact me directly at ryanshield132456@gmail.com",
         variant: "destructive",
       });
     } finally {
@@ -82,17 +82,18 @@ export default function Contact() {
     threshold: 0.1,
   });
 
+  // ✅ Updated contact info for Ryan Shields
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "christophergore921@gmail.com",
-      action: () => window.open("mailto:christophergore921@gmail.com", '_blank')
+      value: "ryanshield132456@gmail.com",
+      action: () => window.open("mailto:ryanshield132456@gmail.com", '_blank')
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Chicago, IL",
+      value: "Media, PA",
       action: () => {}
     },
   ];
@@ -111,8 +112,8 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Interested in a senior full-stack developer with 10+ years of experience in Angular, .NET, and Python? 
-            Let’s discuss how I can contribute to your engineering team or technical leadership needs.
+            Looking for an AI Automation Architect with 20+ years of experience in CRM/ERP integration, LLMs, and enterprise cloud systems? 
+            Let’s build intelligent, compliant, and scalable automation together.
           </p>
         </motion.div>
 
@@ -127,7 +128,7 @@ export default function Contact() {
               <CardHeader>
                 <CardTitle className="font-display">Contact Information</CardTitle>
                 <p className="text-muted-foreground">
-                  Reach out for senior engineering roles, technical leadership, or architecture consulting.
+                  Open to AI architecture, CRM/ERP integration, and technical leadership roles.
                 </p>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -157,13 +158,14 @@ export default function Contact() {
                 <div className="pt-6 border-t">
                   <h3 className="font-semibold mb-4">Professional Focus</h3>
                   <p className="text-muted-foreground text-sm mb-4">
-                    I specialize in building secure, high-performance applications using:
+                    I specialize in building secure, auditable AI systems using:
                   </p>
                   <div className="space-y-2 text-sm text-muted-foreground">
-                    <div>• Angular & .NET Core for enterprise web apps</div>
-                    <div>• Python/Django for data-intensive platforms</div>
-                    <div>• Azure cloud, Docker, and CI/CD pipelines</div>
-                    <div>• Technical leadership and mentoring</div>
+                    <div>• LangChain, OpenAI, and RAG for intelligent automation</div>
+                    <div>• Microsoft Dynamics 365 and Salesforce integration</div>
+                    <div>• SAP, NetSuite, and Oracle ERP Cloud connectivity</div>
+                    <div>• Cloud-native deployment on Azure and AWS</div>
+                    <div>• Terraform, Docker, and CI/CD for infrastructure-as-code</div>
                   </div>
                 </div>
               </CardContent>
@@ -180,7 +182,7 @@ export default function Contact() {
               <CardHeader>
                 <CardTitle className="font-display">Send a Message</CardTitle>
                 <p className="text-muted-foreground">
-                  I’m currently open to senior full-stack and technical leadership opportunities.
+                  I respond to all inquiries within 24–48 hours.
                 </p>
               </CardHeader>
               <CardContent>
@@ -224,7 +226,7 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <Label htmlFor="email">Email </Label>
+                        <Label htmlFor="email">Email</Label>
                         <Input
                           id="email"
                           type="email"
@@ -243,12 +245,12 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <Label htmlFor="subject">Subject </Label>
+                      <Label htmlFor="subject">Subject</Label>
                       <Input
                         id="subject"
                         {...register("subject")}
                         className={`mt-1 ${errors.subject ? "border-destructive" : ""}`}
-                        placeholder="e.g., Senior Developer Role"
+                        placeholder="e.g., AI Automation Architecture Role"
                         data-testid="input-subject"
                       />
                       {errors.subject && (
@@ -260,12 +262,12 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <Label htmlFor="message">Message </Label>
+                      <Label htmlFor="message">Message</Label>
                       <Textarea
                         id="message"
                         {...register("message")}
                         className={`mt-1 min-h-32 ${errors.message ? "border-destructive" : ""}`}
-                        placeholder="Tell me about your team, project, or opportunity..."
+                        placeholder="Tell me about your project, integration needs, or AI automation goals..."
                         data-testid="textarea-message"
                       />
                       {errors.message && (

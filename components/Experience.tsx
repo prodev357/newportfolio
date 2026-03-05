@@ -21,61 +21,59 @@ export default function Experience() {
   const experiences: ExperienceItem[] = [
     {
       id: "1",
-      company: "Simform",
-      position: "Senior Full Stack Developer",
-      location: "Orlando, FL",
-      startDate: "May 2024",
-      endDate: "Present",
+      company: "Vention",
+      position: "AI Automation Architect | Full Stack & CRM/ERP Integration",
+      location: "New York, USA",
+      startDate: "Jan 2022",
+      endDate: "Dec 2025",
       description: [
-        "Architected a cloud-native farm intelligence platform using Angular 16, .NET 7, and Python/Django, reducing data latency by 60% and supporting over 200 enterprise clients.",
-        "Led migration from monolithic .NET Framework to Dockerized microservices (.NET Core and Node.js), cutting Azure costs by 25% and tripling deployment frequency.",
-        "Built a real-time telemetry dashboard with React, SignalR, and WebSockets, processing 10,000+ sensor events per hour with sub-second response.",
-        "Implemented CI/CD via GitHub Actions and infrastructure-as-code, reducing release cycles from hours to minutes.",
-        "Mentored 4 developers in Angular best practices and C# performance tuning, improving team velocity by 20%."
+        "Designed and delivered end-to-end AI automation systems integrating Microsoft Dynamics 365, Salesforce, and SAP using LLMs, Azure OpenAI, LangChain, and RAG—replacing manual case routing with auditable AI agents.",
+        "Built secure middleware using Python (FastAPI) and .NET Core to synchronize real-time data between legacy ERP systems and modern CRMs, reducing reconciliation errors by 70%.",
+        "Implemented vector-based knowledge retrieval with Pinecone and PostgreSQL to enable context-aware AI responses while maintaining strict data privacy controls.",
+        "Deployed and managed solutions on Azure and AWS using Docker, Terraform, and CI/CD pipelines, supporting zero-downtime releases and infrastructure-as-code governance."
       ],
-      technologies: ["Angular", ".NET 7", "C#", "Python", "Django", "React", "SignalR", "WebSockets", "Azure", "Docker", "GitHub Actions", "IaC"],
+      technologies: ["LangChain", "Azure OpenAI", "RAG", "Pinecone", "Dynamics 365", "Salesforce", "SAP", "Python", "FastAPI", ".NET Core", "Azure", "AWS", "Docker", "Terraform", "CI/CD"]
     },
     {
       id: "2",
-      company: "AptlyLabs Inc",
-      position: "Full Stack Developer",
-      location: "Chicago, IL",
-      startDate: "Mar 2022",
-      endDate: "Dec 2023",
+      company: "Eco York LLC",
+      position: "Senior Full Stack Developer | Enterprise Integration",
+      location: "Pennsylvania, USA",
+      startDate: "Feb 2018",
+      endDate: "Feb 2022",
       description: [
-        "Developed React and .NET Core SaaS applications for healthcare logistics with role-based access control, audit logging, and JWT/OAuth 2.0 security.",
-        "Created RESTful APIs serving 10,000+ monthly users, achieving 99.95% uptime and under 200ms response time using PostgreSQL and Redis.",
-        "Drove test coverage from 35% to 80% using xUnit, Jest, and Cypress through TDD adoption.",
-        "Containerized applications with Docker and deployed to Azure App Services."
+        "Integrated NetSuite ERP and Oracle Cloud with custom SaaS platforms using REST/SOAP APIs, Azure Logic Apps, and Kafka—enabling real-time inventory and financial synchronization for over 50 clients.",
+        "Automated document processing with Python and Azure Cognitive Services, reducing manual invoice processing by 80%.",
+        "Developed responsive front-end applications with React and Angular, and back-end services with Node.js and C#, deployed via GitHub Actions to AWS ECS."
       ],
-      technologies: ["React", ".NET Core", "C#", "PostgreSQL", "Redis", "JWT", "OAuth 2.0", "Docker", "Azure", "xUnit", "Jest", "Cypress"],
+      technologies: ["NetSuite", "Oracle ERP Cloud", "Azure Logic Apps", "Kafka", "Python", "Azure Cognitive Services", "React", "Angular", "Node.js", "C#", "AWS ECS", "GitHub Actions"]
     },
     {
       id: "3",
-      company: "Bluelight",
-      position: "Software Engineer",
-      location: "Sacramento, CA",
-      startDate: "Jan 2020",
-      endDate: "Dec 2021",
+      company: "LMSNinjas",
+      position: "Software Engineer | Financial Systems",
+      location: "Pennsylvania, USA",
+      startDate: "Jan 2012",
+      endDate: "Nov 2017",
       description: [
-        "Refactored legacy ASP.NET MVC UIs into React components, reducing UI-related bug reports by 40%.",
-        "Automated reporting pipelines using Python (Pandas, Flask), saving over 8 hours per week in manual work.",
-        "Delivered 3–4 production features per sprint in Agile teams with consistent on-time delivery."
+        "Built and maintained mission-critical applications for banking clients using Java Spring Boot, React, and Oracle Database—supporting KYC workflows and regulatory reporting.",
+        "Developed RESTful microservices for transaction analysis and integrated alerting into ServiceNow and internal dashboards.",
+        "Implemented OAuth 2.0, role-based access control (RBAC), and comprehensive audit logging to meet regulatory and compliance requirements."
       ],
-      technologies: ["React", "ASP.NET MVC", "C#", "Python", "Pandas", "Flask", "SQL Server", "JavaScript", "HTML/CSS"],
+      technologies: ["Java Spring Boot", "React", "Oracle Database", "RESTful APIs", "ServiceNow", "OAuth 2.0", "RBAC", "Audit Logging"]
     },
     {
       id: "4",
-      company: "Chicago Tech Innovations",
-      position: "Junior Web Developer",
-      location: "Chicago, IL",
-      startDate: "Feb 2019",
-      endDate: "Dec 2019",
+      company: "Valyr",
+      position: "Web Application Developer",
+      location: "Pennsylvania, USA",
+      startDate: "Feb 2004",
+      endDate: "Dec 2011",
       description: [
-        "Built internal tools with ASP.NET Web Forms, SQL Server, and Python/Flask for task and data management.",
-        "Learned Git, debugging, and requirements gathering during internship; converted to full-time role after graduation."
+        "Led development of logistics and CRM applications using ASP.NET, SQL Server, and jQuery for regional manufacturing and distribution clients.",
+        "Modernized legacy VB6 applications to C# and the .NET Framework, improving system performance by 45%."
       ],
-      technologies: ["ASP.NET Web Forms", "C#", "SQL Server", "Python", "Flask", "Git", "Agile"],
+      technologies: ["ASP.NET", "SQL Server", "jQuery", "VB6", "C#", ".NET Framework"]
     }
   ];
 
@@ -98,7 +96,7 @@ export default function Experience() {
             Professional Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Over 10 years of experience building secure, high-performance web applications using Angular, React, .NET Core, C#, and cloud-native solutions on Azure and AWS.
+            Over 20 years of experience designing and delivering production-grade AI automation and enterprise integration systems—connecting CRM, ERP, and custom applications with secure, scalable, and compliant architectures.
           </p>
         </motion.div>
 

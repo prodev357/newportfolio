@@ -50,7 +50,6 @@ export default function Navigation() {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
-    console.log(`Navigating to section: ${sectionId}`);
   };
 
   return (
@@ -135,6 +134,14 @@ export default function Navigation() {
                     <span className="font-display font-bold text-xl text-primary">
                       Navigation
                     </span>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <X className="h-5 w-5" />
+                      <span className="sr-only">Close menu</span>
+                    </Button>
                   </div>
                   
                   <nav className="flex flex-col space-y-4">
