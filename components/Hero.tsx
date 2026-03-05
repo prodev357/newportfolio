@@ -165,26 +165,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <div className="relative">
-              <motion.div
-                className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=600&h=600&fit=crop"
-                  alt="Ryan Shields - AI Automation Architect"
-                  fill
-                  sizes="(max-width: 768px) 320px, 384px"
-                  className="object-cover"
-                  data-testid="img-avatar"
-                  priority
-                />
-              </motion.div>
-              
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 blur-xl -z-10" />
-            </div>
+         
           </motion.div>
         </div>
 

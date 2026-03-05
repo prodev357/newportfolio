@@ -1,105 +1,53 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { useToast } from "@/lib/hooks/use-toast";
-import { Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { GraduationCap, Calendar, MapPin } from "lucide-react";
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
+interface EducationItem {
+  id: string;
+  institution: string;
+  degree: string;
+  field: string;
+  location: string;
+  startYear: string;
+  endYear: string;
+  description: string[];
+  achievements?: string[];
+}
 
-type ContactForm = z.infer<typeof contactSchema>;
-
-export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const { toast } = useToast();
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-    watch,
-  } = useForm<ContactForm>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  const watchedFields = watch();
-
-  const onSubmit = async (data: ContactForm) => {
-    setIsSubmitting(true);
-    
-    try {
-      const subject = encodeURIComponent(data.subject);
-      const body = encodeURIComponent(
-        `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
-      );
-      // ✅ Correct email from Ryan's resume
-      const emailUrl = `mailto:ryanshield132456@gmail.com?subject=${subject}&body=${body}`;
-      
-      window.open(emailUrl, '_blank');
-      
-      setIsSubmitted(true);
-      reset();
-      
-      toast({
-        title: "Email client opened!",
-        description: "Your message has been prepared. Please send it to complete your inquiry.",
-      });
-    } catch (error) {
-      toast({
-        title: "Unable to open email client",
-        description: "Please contact me directly at ryanshield132456@gmail.com",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+export default function Education() {
+  const education: EducationItem[] = [
+    {
+      id: "1",
+      institution: "Pennsylvania Western University",
+      degree: "Bachelor of Science in Computer Science",
+      field: "Software Development & Systems Architecture",
+      location: "Media, PA",
+      startYear: "1999",
+      endYear: "2003",
+      description: [
+        "Developed a strong foundation in algorithms, data structures, object-oriented programming, and software engineering principles.",
+        "Gained hands-on experience with C#, ASP.NET, SQL Server, and Python through coursework and projects.",
+        "Completed a software development internship at Stanislaus Tech Innovations, building internal tools with ASP.NET Web Forms and Python/Flask.",
+        "Applied Agile methodologies in team-based capstone projects focused on real-world problem solving."
+      ],
+      achievements: [
+        "Graduated with practical full-stack development experience",
+        "Secured full-time role post-internship based on academic and project performance"
+      ]
     }
-  };
+  ];
 
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
-  // ✅ Updated contact info for Ryan Shields
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "ryanshield132456@gmail.com",
-      action: () => window.open("mailto:ryanshield132456@gmail.com", '_blank')
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Media, PA",
-      action: () => {}
-    },
-  ];
-
   return (
-    <section id="contact" className="py-20 lg:py-24">
+    <section id="education" className="py-20 lg:py-24">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -109,205 +57,86 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 text-foreground">
-            Get In Touch
+            Education
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Looking for an AI Automation Architect with 20+ years of experience in CRM/ERP integration, LLMs, and enterprise cloud systems? 
-            Let’s build intelligent, compliant, and scalable automation together.
+            Academic foundation that launched my 10+ year career in full-stack development, with early focus on .NET, C#, and Python.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="font-display">Contact Information</CardTitle>
-                <p className="text-muted-foreground">
-                  Open to AI architecture, CRM/ERP integration, and technical leadership roles.
-                </p>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {contactInfo.map((info, index) => {
-                  const Icon = info.icon;
-                  return (
-                    <motion.div
-                      key={info.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={inView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                      className="flex items-center gap-4 p-4 rounded-lg hover-elevate transition-all duration-300 cursor-pointer"
-                      onClick={info.action}
-                      data-testid={`contact-${info.label.toLowerCase()}`}
-                    >
+        <div className="max-w-4xl mx-auto">
+          {education.map((edu, index) => (
+            <motion.div
+              key={edu.id}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+            >
+              <Card className="hover-elevate transition-all duration-300">
+                <CardHeader className="pb-4">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-3">
+                    <div className="flex items-center gap-3">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Icon className="h-6 w-6 text-primary" />
+                        <GraduationCap className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground">{info.label}</h3>
-                        <p className="text-muted-foreground">{info.value}</p>
+                        <h3 className="text-xl font-semibold font-display text-foreground">
+                          {edu.institution}
+                        </h3>
+                        <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
+                          <MapPin className="h-3 w-3" />
+                          {edu.location}
+                        </p>
                       </div>
-                    </motion.div>
-                  );
-                })}
-
-                <div className="pt-6 border-t">
-                  <h3 className="font-semibold mb-4">Professional Focus</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    I specialize in building secure, auditable AI systems using:
-                  </p>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <div>• LangChain, OpenAI, and RAG for intelligent automation</div>
-                    <div>• Microsoft Dynamics 365 and Salesforce integration</div>
-                    <div>• SAP, NetSuite, and Oracle ERP Cloud connectivity</div>
-                    <div>• Cloud-native deployment on Azure and AWS</div>
-                    <div>• Terraform, Docker, and CI/CD for infrastructure-as-code</div>
+                    </div>
+                    <Badge variant="secondary" className="w-fit">
+                      <Calendar className="h-3 w-3 mr-1" />
+                      {edu.startYear} – {edu.endYear}
+                    </Badge>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-display">Send a Message</CardTitle>
-                <p className="text-muted-foreground">
-                  I respond to all inquiries within 24–48 hours.
-                </p>
-              </CardHeader>
-              <CardContent>
-                {isSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-8"
-                  >
-                    <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">Message Prepared!</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Your email draft has been opened. Please review and send it to complete your inquiry.
+                  
+                  <div className="ml-15">
+                    <h4 className="text-lg font-medium text-primary">
+                      {edu.degree}
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      {edu.field}
                     </p>
-                    <Button
-                      variant="outline"
-                      onClick={() => setIsSubmitted(false)}
-                      data-testid="button-send-another"
-                    >
-                      Compose Another Message
-                    </Button>
-                  </motion.div>
-                ) : (
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  </div>
+                </CardHeader>
+
+                <CardContent>
+                  <div className="space-y-4">
+                    <ul className="space-y-2">
+                      {edu.description.map((item, i) => (
+                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <span className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {edu.achievements && edu.achievements.length > 0 && (
                       <div>
-                        <Label htmlFor="name">Name</Label>
-                        <Input
-                          id="name"
-                          {...register("name")}
-                          className={`mt-1 ${errors.name ? "border-destructive" : ""}`}
-                          placeholder="Your name"
-                          data-testid="input-name"
-                        />
-                        {errors.name && (
-                          <p className="text-destructive text-sm mt-1 flex items-center gap-1">
-                            <AlertCircle className="h-3 w-3" />
-                            {errors.name.message}
-                          </p>
-                        )}
+                        <h5 className="text-sm font-semibold mb-2">Achievements:</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {edu.achievements.map((achievement) => (
+                            <Badge
+                              key={achievement}
+                              variant="outline"
+                              className="text-xs hover-elevate"
+                            >
+                              {achievement}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-
-                      <div>
-                        <Label htmlFor="email">Email</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          {...register("email")}
-                          className={`mt-1 ${errors.email ? "border-destructive" : ""}`}
-                          placeholder="your.email@example.com"
-                          data-testid="input-email"
-                        />
-                        {errors.email && (
-                          <p className="text-destructive text-sm mt-1 flex items-center gap-1">
-                            <AlertCircle className="h-3 w-3" />
-                            {errors.email.message}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input
-                        id="subject"
-                        {...register("subject")}
-                        className={`mt-1 ${errors.subject ? "border-destructive" : ""}`}
-                        placeholder="e.g., AI Automation Architecture Role"
-                        data-testid="input-subject"
-                      />
-                      {errors.subject && (
-                        <p className="text-destructive text-sm mt-1 flex items-center gap-1">
-                          <AlertCircle className="h-3 w-3" />
-                          {errors.subject.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        {...register("message")}
-                        className={`mt-1 min-h-32 ${errors.message ? "border-destructive" : ""}`}
-                        placeholder="Tell me about your project, integration needs, or AI automation goals..."
-                        data-testid="textarea-message"
-                      />
-                      {errors.message && (
-                        <p className="text-destructive text-sm mt-1 flex items-center gap-1">
-                          <AlertCircle className="h-3 w-3" />
-                          {errors.message.message}
-                        </p>
-                      )}
-                      <div className="text-xs text-muted-foreground mt-1 text-right">
-                        {watchedFields.message?.length || 0} characters
-                      </div>
-                    </div>
-
-                    <Button
-                      type="submit"
-                      className="w-full hover-elevate"
-                      disabled={isSubmitting}
-                      data-testid="button-send-message"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-foreground mr-2" />
-                          Preparing Email...
-                        </>
-                      ) : (
-                        <>
-                          <Send className="h-4 w-4 mr-2" />
-                          Send Message
-                        </>
-                      )}
-                    </Button>
-
-                    <p className="text-xs text-muted-foreground text-center">
-                      This form opens your email client. Your message is not sent automatically.
-                    </p>
-                  </form>
-                )}
-              </CardContent>
-            </Card>
-          </motion.div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

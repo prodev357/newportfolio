@@ -15,7 +15,7 @@ export default function Footer() {
   const handleSocialClick = (platform: string) => {
     const links = {
       github: "https://github.com/prodev357",
-      email: "mailto:christophergore921@gmail.com"
+      email: "mailto:ryanshield132456@gmail.com"
     };
     
     if (links[platform as keyof typeof links]) {
@@ -49,11 +49,10 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <h3 className="text-xl font-bold font-display text-primary mb-4">
-                Christopher Gore
+                Ryan Shields
               </h3>
               <p className="text-muted-foreground text-sm mb-4">
-                Senior Full Stack Developer specializing in <strong>Angular, React, .NET Core, C#, Python, and Django</strong>. 
-                Building secure, high-performance web applications with 10+ years of experience.
+                AI Automation Architect with 20+ years of experience building intelligent, full-stack systems that automate workflows and unify CRM/ERP platforms .
               </p>
               
               {/* Social Links */}
@@ -114,10 +113,10 @@ export default function Footer() {
             >
               <h4 className="font-semibold mb-4">Get In Touch</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>📧 christophergore921@gmail.com</p>
-                <p>📍 Chicago, IL</p>
+                <p>📧 ryanshield132456@gmail.com</p>
+                <p>📍 Media, PA</p>
                 <p className="mt-4">
-                  Open to senior full-stack roles, technical leadership, and cloud architecture opportunities.
+                  Open to AI automation architecture, technical leadership, and cloud architecture opportunities.
                 </p>
               </div>
             </motion.div>
@@ -135,7 +134,7 @@ export default function Footer() {
           className="flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>© {currentYear} Christopher Gore. Made with</span>
+            <span>© {currentYear} Ryan Shields. Made with</span>
             <Heart className="h-4 w-4 text-red-500 fill-current" />
             <span>and lots of coffee.</span>
           </div>

@@ -78,13 +78,13 @@ export default function About() {
               <h3 className="text-2xl font-semibold font-display mb-4">My Journey</h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  I’m an **AI Automation Architect** based in **Media, PA**, with over two decades of experience designing and delivering production-grade systems that bridge **CRM (Microsoft Dynamics 365, Salesforce)**, **ERP (SAP, NetSuite, Oracle ERP Cloud)**, and custom applications using **AI, cloud, and modern web technologies**.
+                  I’m an AI Automation Architect based in Media, PA, with over two decades of experience designing and delivering production-grade systems that bridge CRM (Microsoft Dynamics 365, Salesforce), ERP (SAP, NetSuite, Oracle ERP Cloud), and custom applications using AI, cloud, and modern web technologies.
                 </p>
                 <p>
-                  At **Vention**, I designed end-to-end AI automation systems integrating **Dynamics 365, Salesforce, and SAP** using **LangChain, Azure OpenAI, and RAG**—replacing manual case routing with auditable AI agents. At **Eco York LLC**, I automated invoice processing using **Python and Azure Cognitive Services**, reducing manual work by **80%**.
+                  At Vention, I designed end-to-end AI automation systems integrating Dynamics 365, Salesforce, and SAP using LangChain, Azure OpenAI, and RAG—replacing manual case routing with auditable AI agents. At Eco York LLC, I automated invoice processing using Python and Azure Cognitive Services, reducing manual work by 80%.
                 </p>
                 <p>
-                  My architectures are built for **production from day one**—with **GDPR/HIPAA compliance**, **infrastructure-as-code (Terraform)**, **zero-downtime deployments**, and **full auditability**—trusted by financial institutions, healthcare providers, and enterprise clients.
+                  My architectures are built for production from day one—with GDPR/HIPAA compliance, infrastructure-as-code (Terraform), zero-downtime deployments, and full auditability—trusted by financial institutions, healthcare providers, and enterprise clients.
                 </p>
               </div>
             </div>
