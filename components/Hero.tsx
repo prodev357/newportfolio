@@ -20,13 +20,13 @@ export default function Hero() {
 
   const handleDownloadResume = () => {
     // Cleaned URL (no trailing spaces)
-    window.open("https://drive.google.com/file/d/1GsMt57wHqWjedcV19sbZrgmyAM-uiDjp/view?usp=drive_link", '_blank');
+    window.open("https://drive.google.com/file/d/1pQiP6C_ZHMH4m1a9UNZI_aT5GbGVjFBA/", '_blank');
   };
 
   const handleSocialClick = (platform: string) => {
     const links = {
       github: "https://github.com/prodev357",
-      email: "mailto:ryanshield132456@gmail.com"
+      email: "mailto:hunteroffice7@gmail.com"
     };
     
     if (links[platform as keyof typeof links]) {
@@ -76,7 +76,7 @@ export default function Hero() {
             >
               Hi, I'm{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/80">
-                Ryan Shields
+                Hunterj J ZACPAL
               </span>
             </motion.h1>
             
@@ -93,17 +93,17 @@ export default function Hero() {
                 transition={{ delay: 0.6, duration: 2 }}
                 className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-primary"
               >
-                AI Automation Architect | CRM/ERP Integration Specialist
+                AI Full Stack Engineer | LLM Integration, Web & Cloud Architecture
               </motion.span>
             </motion.div>
 
             <motion.p
               className="text-lg text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
             >
-              AI Automation Architect with over 20 years of experience designing and delivering production-grade systems that connect CRM (Dynamics 365, Salesforce), ERP (SAP, NetSuite), and custom applications using LLMs, RAG, and cloud technologies.
+              AI Full Stack Engineer with 15+ years of experience building intelligent, scalable web systems that automate workflows and unify data platforms
             </motion.p>
 
             <motion.div

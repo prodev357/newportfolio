@@ -72,7 +72,7 @@ export default function Navigation() {
             onClick={() => scrollToSection("home")}
             data-testid="link-logo"
           >
-            RS
+            HZ
           </motion.div>
 
           {/* Desktop Navigation */}

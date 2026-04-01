@@ -14,38 +14,44 @@ export default function About() {
   });
 
   const handleDownloadResume = () => {
-    // Cleaned URL (no trailing spaces)
-    window.open("https://drive.google.com/file/d/1GsMt57wHqWjedcV19sbZrgmyAM-uiDjp/view?usp=drive_link", '_blank');
+    window.open(
+      "https://drive.google.com/file/d/1pQiP6C_ZHMH4m1a9UNZI_aT5GbGVjFBA/",
+      "_blank"
+    );
   };
 
   const values = [
     {
       icon: Zap,
-      title: "AI-Powered Business Automation",
-      description: "Embedded LLMs and RAG into real workflows—replacing manual case routing in Dynamics 365 + SAP with auditable AI agents."
+      title: "Production AI Systems",
+      description:
+        "Built LLM and RAG powered SaaS platforms that automate customer workflows and reduce manual operations by 60%."
     },
     {
       icon: Target,
-      title: "Secure CRM/ERP Integration",
-      description: "Built compliant middleware between SAP, NetSuite, and custom apps—reducing reconciliation errors by 70% with full audit trails."
+      title: "AI Agents & Automation",
+      description:
+        "Designed AutoGen and CrewAI agents handling multi-step business logic with secure RBAC and OAuth-based access."
     },
     {
       icon: Users,
-      title: "End-to-End Production AI",
-      description: "Architected LangChain + Pinecone systems on Azure/AWS with Terraform, Docker, and CI/CD—trusted by enterprise clients."
+      title: "Scalable Cloud Architecture",
+      description:
+        "Deployed LangChain + vector search platforms on Azure and AWS using Docker, Terraform, and CI/CD pipelines."
     },
     {
       icon: Heart,
-      title: "Compliance by Design",
-      description: "GDPR/HIPAA-compliant solutions with RBAC, OAuth 2.0, and secure coding—built for production from day one."
+      title: "Secure Enterprise Engineering",
+      description:
+        "Production-ready systems with encryption, auditability, and role-based access for enterprise-grade reliability."
     }
   ];
 
   const personalStats = [
-    { label: "Years of Experience", value: "20+" },
-    { label: "Enterprise Systems Integrated", value: "50+" },
-    { label: "Reconciliation Errors", value: "70% Reduction" },
-    { label: "Invoice Processing Time", value: "80% Faster" }
+    { label: "Years of Experience", value: "7+" },
+    { label: "AI Systems Delivered", value: "25+" },
+    { label: "Manual Work Reduced", value: "60%" },
+    { label: "Production Deployments", value: "40+" }
   ];
 
   return (
@@ -62,7 +68,10 @@ export default function About() {
             About Me
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            AI Automation Architect with 20+ years of experience designing and delivering production-grade systems that connect CRM, ERP, and custom applications using AI, cloud, and modern web technologies.
+            AI Full Stack Engineer with 7+ years of experience building intelligent,
+            scalable SaaS platforms. I specialize in embedding LLMs, RAG pipelines,
+            and AI agents into real business workflows to automate operations and
+            improve decision-making.
           </p>
         </motion.div>
 
@@ -75,36 +84,48 @@ export default function About() {
             className="space-y-6"
           >
             <div>
-              <h3 className="text-2xl font-semibold font-display mb-4">My Journey</h3>
+              <h3 className="text-2xl font-semibold font-display mb-4">
+                My Journey
+              </h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  I’m an AI Automation Architect based in Media, PA, with over two decades of experience designing and delivering production-grade systems that bridge CRM (Microsoft Dynamics 365, Salesforce), ERP (SAP, NetSuite, Oracle ERP Cloud), and custom applications using AI, cloud, and modern web technologies.
+                  I'm an AI Full Stack Engineer based in Las Vegas, specializing
+                  in building production-ready AI platforms that combine modern
+                  web technologies with intelligent automation. My work focuses
+                  on integrating LLMs, vector databases, and cloud infrastructure
+                  to create scalable enterprise solutions.
                 </p>
                 <p>
-                  At Vention, I designed end-to-end AI automation systems integrating Dynamics 365, Salesforce, and SAP using LangChain, Azure OpenAI, and RAG—replacing manual case routing with auditable AI agents. At Eco York LLC, I automated invoice processing using Python and Azure Cognitive Services, reducing manual work by 80%.
+                  At WonderBotz, I architected AI-powered SaaS systems using
+                  LangChain, Azure OpenAI, and Pinecone, reducing manual ticket
+                  resolution time by 60%. I built intelligent AI agents capable
+                  of executing multi-step workflows securely using RBAC and OAuth.
                 </p>
                 <p>
-                  My architectures are built for production from day one—with GDPR/HIPAA compliance, infrastructure-as-code (Terraform), zero-downtime deployments, and full auditability—trusted by financial institutions, healthcare providers, and enterprise clients.
+                  My architecture philosophy emphasizes scalability, clean system
+                  design, and production reliability. I design microservices,
+                  implement CI/CD pipelines, and deploy secure AI-driven systems
+                  on Azure and AWS environments.
                 </p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary" className="hover-elevate">LangChain</Badge>
-              <Badge variant="secondary" className="hover-elevate">OpenAI / Azure OpenAI</Badge>
-              <Badge variant="secondary" className="hover-elevate">RAG / Pinecone</Badge>
-              <Badge variant="secondary" className="hover-elevate">Dynamics 365</Badge>
-              <Badge variant="secondary" className="hover-elevate">SAP / NetSuite</Badge>
-              <Badge variant="secondary" className="hover-elevate">Oracle ERP Cloud</Badge>
-              <Badge variant="secondary" className="hover-elevate">Python / .NET</Badge>
-              <Badge variant="secondary" className="hover-elevate">Azure / AWS</Badge>
-              <Badge variant="secondary" className="hover-elevate">Terraform / Docker</Badge>
+              <Badge variant="secondary">LangChain</Badge>
+              <Badge variant="secondary">OpenAI / Azure OpenAI</Badge>
+              <Badge variant="secondary">RAG / Pinecone</Badge>
+              <Badge variant="secondary">AutoGen</Badge>
+              <Badge variant="secondary">CrewAI</Badge>
+              <Badge variant="secondary">React / Next.js</Badge>
+              <Badge variant="secondary">Node.js / FastAPI</Badge>
+              <Badge variant="secondary">.NET Core</Badge>
+              <Badge variant="secondary">Azure / AWS</Badge>
+              <Badge variant="secondary">Docker / Terraform</Badge>
             </div>
 
-            <Button 
+            <Button
               onClick={handleDownloadResume}
               className="hover-elevate"
-              data-testid="button-about-resume"
             >
               <Download className="w-4 h-4 mr-2" />
               Download Resume
@@ -129,7 +150,10 @@ export default function About() {
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.6 + index * 0.1
+                    }}
                     className="text-center"
                   >
                     <div className="text-2xl font-bold text-primary mb-1">
@@ -156,7 +180,10 @@ export default function About() {
                       key={value.title}
                       initial={{ opacity: 0, y: 20 }}
                       animate={inView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.8 + index * 0.1
+                      }}
                     >
                       <Card className="p-4 h-full hover-elevate transition-all duration-300">
                         <CardContent className="p-0">
@@ -165,7 +192,9 @@ export default function About() {
                               <Icon className="w-5 h-5 text-primary" />
                             </div>
                             <div>
-                              <h4 className="font-semibold mb-1">{value.title}</h4>
+                              <h4 className="font-semibold mb-1">
+                                {value.title}
+                              </h4>
                               <p className="text-sm text-muted-foreground">
                                 {value.description}
                               </p>

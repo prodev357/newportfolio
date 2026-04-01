@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Building2 } from "lucide-react";
+import { MapPin, Building2 } from "lucide-react";
 
 interface ExperienceItem {
   id: string;
@@ -21,59 +21,83 @@ export default function Experience() {
   const experiences: ExperienceItem[] = [
     {
       id: "1",
-      company: "Vention",
-      position: "AI Automation Architect | Full Stack & CRM/ERP Integration",
-      location: "New York, USA",
-      startDate: "Jan 2022",
+      company: "WonderBotz",
+      position: "Senior AI Full Stack Engineer",
+      location: "Remote",
+      startDate: "Nov 2022",
       endDate: "Dec 2025",
       description: [
-        "Designed and delivered end-to-end AI automation systems integrating Microsoft Dynamics 365, Salesforce, and SAP using LLMs, Azure OpenAI, LangChain, and RAG—replacing manual case routing with auditable AI agents.",
-        "Built secure middleware using Python (FastAPI) and .NET Core to synchronize real-time data between legacy ERP systems and modern CRMs, reducing reconciliation errors by 70%.",
-        "Implemented vector-based knowledge retrieval with Pinecone and PostgreSQL to enable context-aware AI responses while maintaining strict data privacy controls.",
-        "Deployed and managed solutions on Azure and AWS using Docker, Terraform, and CI/CD pipelines, supporting zero-downtime releases and infrastructure-as-code governance."
+        "Architected and deployed production-ready AI SaaS platforms integrating LLMs and RAG to automate customer support workflows, reducing manual resolution time by 60%.",
+        "Developed intelligent AI agents using AutoGen and CrewAI to handle multi-step business logic with secure OAuth 2.0 and RBAC access control.",
+        "Migrated legacy monolithic systems to microservices using Node.js and Python FastAPI hosted on Azure App Services and AWS Lambda.",
+        "Implemented semantic vector search using Pinecone for enterprise knowledge retrieval across large datasets."
       ],
-      technologies: ["LangChain", "Azure OpenAI", "RAG", "Pinecone", "Dynamics 365", "Salesforce", "SAP", "Python", "FastAPI", ".NET Core", "Azure", "AWS", "Docker", "Terraform", "CI/CD"]
+      technologies: [
+        "OpenAI",
+        "Azure OpenAI",
+        "LangChain",
+        "RAG",
+        "AutoGen",
+        "CrewAI",
+        "Node.js",
+        "Python",
+        "FastAPI",
+        "Azure",
+        "AWS",
+        "Pinecone",
+        "OAuth 2.0",
+        "RBAC"
+      ]
     },
     {
       id: "2",
-      company: "Eco York LLC",
-      position: "Senior Full Stack Developer | Enterprise Integration",
-      location: "Pennsylvania, USA",
-      startDate: "Feb 2018",
-      endDate: "Feb 2022",
+      company: "Inter-Tech",
+      position: "Full Stack Developer",
+      location: "Las Vegas, NV",
+      startDate: "May 2020",
+      endDate: "Jul 2022",
       description: [
-        "Integrated NetSuite ERP and Oracle Cloud with custom SaaS platforms using REST/SOAP APIs, Azure Logic Apps, and Kafka—enabling real-time inventory and financial synchronization for over 50 clients.",
-        "Automated document processing with Python and Azure Cognitive Services, reducing manual invoice processing by 80%.",
-        "Developed responsive front-end applications with React and Angular, and back-end services with Node.js and C#, deployed via GitHub Actions to AWS ECS."
+        "Built scalable web applications using React.js, Next.js, and .NET Core serving 50,000+ monthly active users.",
+        "Designed REST and GraphQL APIs to unify multiple third-party services and internal platforms.",
+        "Established CI/CD pipelines using Docker and Kubernetes to streamline deployment and reduce downtime.",
+        "Integrated payment gateways and webhook-based real-time transaction processing."
       ],
-      technologies: ["NetSuite", "Oracle ERP Cloud", "Azure Logic Apps", "Kafka", "Python", "Azure Cognitive Services", "React", "Angular", "Node.js", "C#", "AWS ECS", "GitHub Actions"]
+      technologies: [
+        "React",
+        "Next.js",
+        ".NET Core",
+        "TypeScript",
+        "Node.js",
+        "GraphQL",
+        "REST APIs",
+        "Docker",
+        "Kubernetes",
+        "CI/CD"
+      ]
     },
     {
       id: "3",
-      company: "LMSNinjas",
-      position: "Software Engineer | Financial Systems",
-      location: "Pennsylvania, USA",
-      startDate: "Jan 2012",
-      endDate: "Nov 2017",
+      company: "Raster Media",
+      position: "Software Engineer",
+      location: "Las Vegas, NV",
+      startDate: "Mar 2017",
+      endDate: "Dec 2020",
       description: [
-        "Built and maintained mission-critical applications for banking clients using Java Spring Boot, React, and Oracle Database—supporting KYC workflows and regulatory reporting.",
-        "Developed RESTful microservices for transaction analysis and integrated alerting into ServiceNow and internal dashboards.",
-        "Implemented OAuth 2.0, role-based access control (RBAC), and comprehensive audit logging to meet regulatory and compliance requirements."
+        "Developed responsive frontend interfaces using TypeScript and Tailwind CSS with cross-device compatibility.",
+        "Contributed to backend development using Python Django focusing on secure coding and encryption.",
+        "Implemented asynchronous task processing with RabbitMQ message queues.",
+        "Participated in full SDLC from requirements gathering to production deployment."
       ],
-      technologies: ["Java Spring Boot", "React", "Oracle Database", "RESTful APIs", "ServiceNow", "OAuth 2.0", "RBAC", "Audit Logging"]
-    },
-    {
-      id: "4",
-      company: "Valyr",
-      position: "Web Application Developer",
-      location: "Pennsylvania, USA",
-      startDate: "Feb 2004",
-      endDate: "Dec 2011",
-      description: [
-        "Led development of logistics and CRM applications using ASP.NET, SQL Server, and jQuery for regional manufacturing and distribution clients.",
-        "Modernized legacy VB6 applications to C# and the .NET Framework, improving system performance by 45%."
-      ],
-      technologies: ["ASP.NET", "SQL Server", "jQuery", "VB6", "C#", ".NET Framework"]
+      technologies: [
+        "TypeScript",
+        "Tailwind CSS",
+        "React",
+        "Python",
+        "Django",
+        "RabbitMQ",
+        "REST APIs",
+        "Secure Coding"
+      ]
     }
   ];
 
@@ -96,12 +120,13 @@ export default function Experience() {
             Professional Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Over 20 years of experience designing and delivering production-grade AI automation and enterprise integration systems—connecting CRM, ERP, and custom applications with secure, scalable, and compliant architectures.
+            7+ years building AI-powered SaaS platforms, scalable full-stack
+            applications, and enterprise automation systems using modern cloud
+            and LLM technologies.
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/30 transform md:-translate-x-1/2" />
 
           <div className="space-y-12">
@@ -115,10 +140,8 @@ export default function Experience() {
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
-                {/* Timeline dot */}
                 <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full transform md:-translate-x-1/2 z-10 border-2 border-background" />
 
-                {/* Content */}
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"} ml-12 md:ml-0`}>
                   <Card className="hover-elevate transition-all duration-300">
                     <CardHeader className="pb-4">
@@ -133,11 +156,11 @@ export default function Experience() {
                           {experience.startDate} – {experience.endDate}
                         </Badge>
                       </div>
-                      
+
                       <h4 className="text-lg font-medium text-primary mb-2">
                         {experience.position}
                       </h4>
-                      
+
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <MapPin className="h-4 w-4" />
                         <span>{experience.location}</span>
@@ -147,7 +170,10 @@ export default function Experience() {
                     <CardContent>
                       <ul className="space-y-2 mb-4">
                         {experience.description.map((item, i) => (
-                          <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <li
+                            key={i}
+                            className="text-sm text-muted-foreground flex items-start gap-2"
+                          >
                             <span className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0" />
                             {item}
                           </li>
@@ -160,7 +186,6 @@ export default function Experience() {
                             key={tech}
                             variant="outline"
                             className="text-xs hover-elevate"
-                            data-testid={`badge-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}
                           >
                             {tech}
                           </Badge>
@@ -170,7 +195,6 @@ export default function Experience() {
                   </Card>
                 </div>
 
-                {/* Spacer for desktop */}
                 <div className="hidden md:block w-2/12" />
               </motion.div>
             ))}

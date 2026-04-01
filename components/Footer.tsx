@@ -15,11 +15,11 @@ export default function Footer() {
   const handleSocialClick = (platform: string) => {
     const links = {
       github: "https://github.com/prodev357",
-      email: "mailto:ryanshield132456@gmail.com"
+      email: "mailto:hunteroffice7@gmail.com"
     };
-    
+
     if (links[platform as keyof typeof links]) {
-      window.open(links[platform as keyof typeof links], '_blank');
+      window.open(links[platform as keyof typeof links], "_blank");
     }
   };
 
@@ -40,7 +40,8 @@ export default function Footer() {
     <footer className="bg-secondary/50 border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Branding & Description */}
+          
+          {/* Branding */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -49,13 +50,15 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <h3 className="text-xl font-bold font-display text-primary mb-4">
-                Ryan Shields
+                Hunterj J ZACPAL
               </h3>
               <p className="text-muted-foreground text-sm mb-4">
-                AI Automation Architect with 20+ years of experience building intelligent, full-stack systems that automate workflows and unify CRM/ERP platforms .
+                AI Full Stack Engineer specializing in LLM integrations, RAG
+                pipelines, and intelligent automation systems. I build scalable
+                SaaS platforms that transform business workflows into
+                AI-powered solutions.
               </p>
-              
-              {/* Social Links */}
+
               <div className="flex gap-2">
                 {[
                   { icon: Github, label: "GitHub", platform: "github" },
@@ -67,7 +70,6 @@ export default function Footer() {
                     size="icon"
                     onClick={() => handleSocialClick(platform)}
                     className="hover-elevate text-muted-foreground hover:text-primary"
-                    data-testid={`footer-${platform}`}
                   >
                     <Icon className="h-4 w-4" />
                     <span className="sr-only">{label}</span>
@@ -94,7 +96,6 @@ export default function Footer() {
                     size="sm"
                     onClick={() => handleQuickNavigation(link.section)}
                     className="justify-start p-0 h-auto font-normal text-muted-foreground hover:text-foreground hover-elevate"
-                    data-testid={`footer-nav-${link.section}`}
                   >
                     {link.label}
                   </Button>
@@ -103,7 +104,7 @@ export default function Footer() {
             </motion.div>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -113,10 +114,11 @@ export default function Footer() {
             >
               <h4 className="font-semibold mb-4">Get In Touch</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>📧 ryanshield132456@gmail.com</p>
-                <p>📍 Media, PA</p>
+                <p>📧 hunteroffice7@gmail.com</p>
+                <p>📍 Las Vegas, NV</p>
                 <p className="mt-4">
-                  Open to AI automation architecture, technical leadership, and cloud architecture opportunities.
+                  Open to AI full-stack engineering, LLM platform development,
+                  and intelligent automation opportunities.
                 </p>
               </div>
             </motion.div>
@@ -125,7 +127,6 @@ export default function Footer() {
 
         <Separator className="my-8" />
 
-        {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -134,18 +135,16 @@ export default function Footer() {
           className="flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>© {currentYear} Ryan Shields. Made with</span>
+            <span>© {currentYear} Hunterj J ZACPAL. Made with</span>
             <Heart className="h-4 w-4 text-red-500 fill-current" />
             <span>and lots of coffee.</span>
           </div>
 
-          {/* Back to Top */}
           <Button
             variant="outline"
             size="sm"
             onClick={scrollToTop}
             className="hover-elevate"
-            data-testid="button-back-to-top"
           >
             <ArrowUp className="h-4 w-4 mr-2" />
             Back to Top

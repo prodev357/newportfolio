@@ -34,7 +34,7 @@ export default function Skills() {
         { name: "LangChain", level: 95, category: "ai" },
         { name: "OpenAI API", level: 93, category: "ai" },
         { name: "Azure OpenAI", level: 92, category: "ai" },
-        { name: "RAG", level: 90, category: "ai" },
+        { name: "RAG Pipelines", level: 90, category: "ai" },
         { name: "Pinecone", level: 88, category: "ai" },
         { name: "Weaviate", level: 85, category: "ai" },
         { name: "AutoGen", level: 85, category: "ai" },
@@ -59,8 +59,8 @@ export default function Skills() {
       icon: Code2,
       skills: [
         { name: "React", level: 93, category: "frontend" },
-        { name: "Angular", level: 90, category: "frontend" },
         { name: "TypeScript", level: 92, category: "frontend" },
+        { name: "Angular", level: 90, category: "frontend" },
         { name: "JavaScript", level: 94, category: "frontend" },
         { name: "HTML5 / CSS3", level: 91, category: "frontend" },
       ],
@@ -100,9 +100,9 @@ export default function Skills() {
         { name: "AWS", level: 92, category: "cloud" },
         { name: "Docker", level: 94, category: "cloud" },
         { name: "Terraform", level: 90, category: "cloud" },
-        { name: "GitHub Actions", level: 88, category: "cloud" },
-        { name: "CI/CD Pipelines", level: 92, category: "cloud" },
         { name: "Kubernetes", level: 85, category: "cloud" },
+        { name: "CI/CD Pipelines", level: 92, category: "cloud" },
+        { name: "GitHub Actions", level: 88, category: "cloud" },
       ],
     },
     {
@@ -120,24 +120,18 @@ export default function Skills() {
     },
   ];
 
-  const allSkills = skillCategories.flatMap(category => category.skills);
-  
-  const filteredSkills = activeCategory === "all" 
-    ? allSkills 
-    : allSkills.filter(skill => skill.category === activeCategory);
+  const allSkills = skillCategories.flatMap((category) => category.skills);
+  const filteredSkills =
+    activeCategory === "all"
+      ? allSkills
+      : allSkills.filter((skill) => skill.category === activeCategory);
 
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const handleCategoryChange = (categoryId: string) => {
-    setActiveCategory(categoryId);
-  };
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <section id="skills" className="py-20 lg:py-24">
       <div className="container mx-auto px-4">
+        {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -145,11 +139,9 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 text-foreground">
-            Skills & Expertise
-          </h2>
+          <h2 className="text-4xl font-bold mb-4 text-foreground">Skills & Expertise</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Enterprise-grade expertise in AI automation, CRM/ERP integration, and full-stack development—building secure, compliant, and scalable systems on Azure and AWS.
+            Enterprise-grade expertise in AI, automation, CRM/ERP, full-stack, and cloud solutions.
           </p>
         </motion.div>
 
@@ -162,25 +154,23 @@ export default function Skills() {
         >
           <Button
             variant={activeCategory === "all" ? "default" : "outline"}
-            onClick={() => handleCategoryChange("all")}
+            onClick={() => setActiveCategory("all")}
             className="hover-elevate"
-            data-testid="filter-all"
           >
             <Palette className="mr-2 h-4 w-4" />
             All Skills
           </Button>
-          {skillCategories.map((category) => {
-            const Icon = category.icon;
+          {skillCategories.map((cat) => {
+            const Icon = cat.icon;
             return (
               <Button
-                key={category.id}
-                variant={activeCategory === category.id ? "default" : "outline"}
-                onClick={() => handleCategoryChange(category.id)}
+                key={cat.id}
+                variant={activeCategory === cat.id ? "default" : "outline"}
+                onClick={() => setActiveCategory(cat.id)}
                 className="hover-elevate"
-                data-testid={`filter-${category.id}`}
               >
                 <Icon className="mr-2 h-4 w-4" />
-                {category.label}
+                {cat.label}
               </Button>
             );
           })}
@@ -193,33 +183,25 @@ export default function Skills() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {filteredSkills.map((skill, index) => (
+          {filteredSkills.map((skill, idx) => (
             <motion.div
               key={`${skill.category}-${skill.name}`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
               <Card className="hover-elevate transition-all duration-300 group-hover:shadow-lg">
-                <CardContent className="p-6">
+                <CardContent>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-semibold text-foreground">{skill.name}</h3>
                     <Badge variant="secondary" className="text-xs">
                       {skill.level}%
                     </Badge>
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Progress 
-                      value={skill.level} 
-                      className="h-2"
-                      data-testid={`progress-${skill.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                    />
-                    <div className="flex justify-between text-xs text-muted-foreground">
-                      <span>Proficiency</span>
-                      <span className="font-medium">{skill.level}%</span>
-                    </div>
+                  <Progress value={skill.level} className="h-2 mb-2" />
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>Proficiency</span>
+                    <span>{skill.level}%</span>
                   </div>
                 </CardContent>
               </Card>
@@ -227,7 +209,7 @@ export default function Skills() {
           ))}
         </motion.div>
 
-        {/* Additional Skills Summary */}
+        {/* Impact Summary */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -253,7 +235,7 @@ export default function Skills() {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary mb-1">80%</div>
-                  <div className="text-sm text-muted-foreground">Less Manual Processing</div>
+                  <div className="text-sm text-muted-foreground">Reduced Manual Processing</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-primary mb-1">45%</div>

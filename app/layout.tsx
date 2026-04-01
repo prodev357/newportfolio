@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ryan Shields - AI Automation Architect | Full Stack | CRM/ERP Integration",
+  title: "Hunterj J ZACPAL - AI Automation Architect | Full Stack | CRM/ERP Integration",
   description: "Senior Full-Stack Engineer specializing in Python, .NET, Node.js, Angular, and React. Building scalable, secure, and high-performance web and enterprise applications.",
 };
 
